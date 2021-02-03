@@ -14,4 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#footer {
+  background-color: lightcoral;
+}
 </style>

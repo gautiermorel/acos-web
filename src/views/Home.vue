@@ -30,7 +30,6 @@
 		<div>A l'atelier, nous modelons et le matériau utilisé est l’argile.</div>
 
 		<div>Une fois l'oeuvre réalisée, elle devra être évidée, séchée pendant quelques semaines puis cuite dans un four spécial pouvant monter à de fortes températures (1300°). La terre cuite ainsi obtenue pourra éventuellement être patinée.</div>
-
 	</div>
 </template>
 
@@ -41,4 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#home {
+	background-color: lightgreen;
+}
 </style>

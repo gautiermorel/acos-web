@@ -4,17 +4,17 @@
 
 		<div>Chaque oeuvre est unique...</div>
 
-		<InstagramList />
+		<FacebookFeed />
 	</div>
 </template>
 
 <script>
-import InstagramList from '@/components/InstagramList.vue';
+import FacebookFeed from '@/components/FacebookFeed.vue';
 
 export default {
 	name: 'Portfolio',
 	components: {
-		InstagramList
+		FacebookFeed
 	}
 }
 </script>
