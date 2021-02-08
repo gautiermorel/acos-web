@@ -1,6 +1,8 @@
 <template>
 	<div id="courses">
-		Apprendre avec ACOS:
+		<div class="courses__header">
+			<h2>Apprendre avec ACOS</h2>
+		</div>
 
 		<div>L'Atlelier</div>
 
@@ -58,4 +60,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.courses__header {
+	height: 200px;
+	width: 100%;
+	background-color: #2c3e50;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+  position: relative;
+
+	&::after {
+		background-image: url("~@/assets/svg/tool.svg");
+		content: "";
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		height: 300px;
+		width: 300px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+	}
+}
 </style>
