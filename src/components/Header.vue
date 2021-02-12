@@ -1,46 +1,37 @@
 <template>
 	<div id="header">
-		<router-link to="/" class="header__logo">
-			<h1>Atelier d'ACOS</h1>
-			<h2>Atelier de sculpture à Amiens</h2>
-		</router-link>
 
 		<div class="header__nav">
 			<router-link to="/" class="header__nav-item">Accueil</router-link>
-			<router-link to="/cours" class="header__nav-item">Se Former</router-link>
+			<router-link to="/cours" class="header__nav-item">Apprendre</router-link>
 			<router-link to="/creations" class="header__nav-item">Découvrir</router-link>
 			<router-link to="/a-propos" class="header__nav-item">à propos</router-link>
 			<router-link to="/contact" class="header__nav-item">Contact</router-link>
+			<div class="header__social">
+				<v-icon name="instagram" base-class="instagram-icon"></v-icon>
+				<v-icon name="facebook" base-class="facebook-icon"></v-icon>
+			</div>
 		</div>
 
-		<Menu />
 	</div>
 </template>
 
 <script>
-import Menu from '@/components/Menu.vue';
-
 export default {
 	name: 'Header',
-	components: {
-		Menu
-	}
 }
 </script>
 
 <style lang="scss" scoped>
-.header__logo {
-	text-decoration: none;
-	color: #2c3e50;
-	line-height: 1px;
-	h1 {
-		font-size: 30px;
-	}
-	h2 {
-		font-size: 11px;
-		color: rgb(53, 53, 53);
-		text-transform: uppercase;
-	}
+.instagram-icon {
+  color: #2c3e50;
+  width: 25px;
+  padding-right: 20px;
+}
+.facebook-icon {
+  color: #2c3e50;
+  width: 20px;
+  fill: #2c3e50;
 }
 
 .header__nav {
@@ -63,6 +54,19 @@ export default {
 	.router-link-exact-active {
 		font-weight: bold;
 		color: rgb(53, 53, 53);
+	}
+}
+
+.header__social {
+	display: flex;
+	width: 120px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	.header__social-icon {
+		cursor: pointer;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 </style>

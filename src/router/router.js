@@ -6,6 +6,7 @@ import Home from '@/views/Home.vue';
 import About from '@/views/About.vue';
 import Courses  from '@/views/Courses.vue';
 import Portfolio  from '@/views/Portfolio.vue';
+import Contact  from '@/views/Contact.vue';
 
 import 'nprogress/nprogress.css';
 
@@ -48,6 +49,16 @@ const routes = [{
 		breadcrumb: [
 			{ name: 'Acceuil', path: '/' },
 			{ name: 'Nos cours' }
+		]
+	}
+}, {
+	path: '/contact',
+	name: 'Contact',
+	component: Contact,
+	meta: {
+		breadcrumb: [
+			{ name: 'Acceuil', path: '/' },
+			{ name: 'Contact' }
 		]
 	}
 }]

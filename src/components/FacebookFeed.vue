@@ -97,7 +97,8 @@ export default {
 								h: height,
 								content: name,
 								title: description
-							})
+              })
+              
 						}
 					}
 				})
@@ -109,8 +110,8 @@ export default {
 				})
 		}
 	},
-	mounted() {
-		this.getUserFeed();
+	async mounted() {
+		await this.getUserFeed();
 	}
 }
 </script>
