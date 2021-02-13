@@ -41,7 +41,7 @@
 			<div class="courses__divider"></div>
 
 			<div>Sont abordés pendant les séances à l'atelier :</div>
-			<ul>
+			<ul class="courses__checks">
 				<li>la compréhension des volumes, l’étude des proportions et la maîtrise de l’argile</li>
 				<li>les techniques de construction et de finition : accumulation et suppression de matière</li>
 				<li>évidage, lissage, cuisson, patine…</li>
@@ -59,13 +59,13 @@
 
 			<div class="courses__divider"></div>
 
-			<div>Mardi :2 créneaux de 3 heures</div>
-			<div>- soit 9H00-12H00</div>
-			<div>- soit 13H00-16H00</div>
+			<div>Mardi: 2 créneaux de 3 heures</div>
+			<div>- soit 09h00-12h00</div>
+			<div>- soit 13h00-16h00</div>
 			​
 
-			<div>Jeudi :1 créneau de 3 heures</div>
-			<div>14H00 - 17H00</div>
+			<div>Jeudi: 1 créneau de 3 heures</div>
+			<div>- 14h00-17h00</div>
 
 			​
 			<div class="courses__conditions">L'atelier suit les vacances scolaires. Il est donc fermé en juillet et en aout.</div>
@@ -89,15 +89,23 @@ export default {
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+}
+.courses__banner-text {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
 
-	.courses__banner-text {
-		text-align: center;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: white;
-	}
+.courses__checks {
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	align-items: center;
+	justify-content: flex-start;
+	justify-items: flex-start;
 }
 
 .home__section {
@@ -107,47 +115,47 @@ export default {
 	align-content: center;
 	justify-content: center;
 	margin-bottom: 50px;
+}
 
-	.home__subtitle {
-		font-size: 20px;
-	}
+.home__section-img-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-direction: row-reverse;
+	min-width: 40%;
+	margin-top: 60px;
 
-	.home__section-img-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		flex-direction: row-reverse;
-		min-width: 40%;
-		margin-top: 60px;
+	.home__section-img {
+		position: relative;
 
-		.home__section-img {
-			position: relative;
+		&::after {
+			position: absolute;
+			top: -40px;
+			right: -40px;
+			content: "";
+			width: 40px;
+			height: 40px;
+			border-width: 3px 3px 0 0;
+			border-style: solid;
+		}
 
-			&::after {
-				position: absolute;
-				top: -40px;
-				right: -40px;
-				content: "";
-				width: 40px;
-				height: 40px;
-				border-width: 3px 3px 0 0;
-				border-style: solid;
-			}
-
-			img {
-				max-height: 300px;
-				border-radius: 3px;
-				max-width: 75vw;
-			}
+		img {
+			max-height: 300px;
+			border-radius: 3px;
+			max-width: 75vw;
 		}
 	}
+}
 
-	.home__section-content {
-		text-align: justify;
-		line-height: 2.5rem;
-		padding-left: 50px;
-		padding-right: 50px;
-	}
+.home__section-content {
+	text-align: justify;
+	line-height: 2.5rem;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.home__subtitle {
+	font-size: 20px;
 }
 
 .home__section--reverse {
@@ -158,10 +166,6 @@ export default {
 	justify-content: center;
 	margin-bottom: 50px;
 
-	.home__subtitle {
-		font-size: 20px;
-	}
-
 	.home__section-img-content {
 		display: flex;
 		flex-direction: column;
@@ -169,34 +173,53 @@ export default {
 		flex-direction: row;
 		min-width: 40%;
 		margin-top: 60px;
+	}
+}
 
-		.home__section-img {
-			position: relative;
+.home__section-content {
+	text-align: justify;
+	line-height: 2.5rem;
+	padding-left: 50px;
+	padding-right: 50px;
+}
 
-			&::after {
-				position: absolute;
-				top: -40px;
-				right: -40px;
-				content: "";
-				width: 40px;
-				height: 40px;
-				border-width: 3px 3px 0 0;
-				border-style: solid;
-			}
+.home__section-img {
+	position: relative;
 
-			img {
-				max-height: 300px;
-				border-radius: 3px;
-				max-width: 75vw;
-			}
-		}
+	&::after {
+		position: absolute;
+		top: -40px;
+		right: -40px;
+		content: "";
+		width: 40px;
+		height: 40px;
+		border-width: 3px 3px 0 0;
+		border-style: solid;
+	}
+
+	img {
+		max-height: 300px;
+		border-radius: 3px;
+		max-width: 75vw;
+	}
+}
+
+.home__subtitle {
+	font-size: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+	.home__section,
+	.home__section--reverse {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-items: space-around;
 	}
 
 	.home__section-content {
-		text-align: justify;
-		line-height: 2.5rem;
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 
