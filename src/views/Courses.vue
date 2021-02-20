@@ -208,6 +208,19 @@ export default {
 	font-size: 20px;
 }
 
+.home__divider {
+	font-size: 0;
+	line-height: 0;
+	margin-bottom: 20px;
+	&::after {
+		content: "";
+		display: inline-block;
+		width: 60px;
+		height: 3px;
+		background-color: rgb(246, 236, 221);
+	}
+}
+
 @media screen and (max-width: 1200px) {
 	.home__section,
 	.home__section--reverse {

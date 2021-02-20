@@ -2,21 +2,13 @@
 	<div id="about">
 		<div class="about__description">
 			<div class="about__description-content">
-				<div>Nom:</div>
-				<div>Prénom:</div>
-				<div>Tel:</div>
-				<div>Message:</div>
+				<div>Un formulaire de contact est en cours de création, merci de me contacter directement par email ou par téléphone pour plus d'information :)</div>
 			</div>
 
 			<div class="about__description-img">
 				<img src="@/assets/imgs/king.jpg" alt="ACOS" />
 			</div>
 		</div>
-
-		<div>------</div>
-
-		<div>En savoir plus sur Andréa Triscuzzi</div>
-		<div>http://www.artonweb.it/arteartonweb/articolo35bis.html</div>
 	</div>
 </template>
 
@@ -46,5 +38,14 @@ export default {
 			box-shadow: 10px 16px #2c3e50;
 		}
 	}
+}
+
+@media screen and (max-width: 999px) {
+  .about__description {
+    flex-direction: column;
+  }
+  .about__description-img {
+    margin-top: 20px;
+  }
 }
 </style>

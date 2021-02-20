@@ -7,7 +7,7 @@
 			<router-link to="/creations" class="header__nav-item">Découvrir</router-link>
 			<router-link to="/a-propos" class="header__nav-item">à propos</router-link>
 			<router-link to="/contact" class="header__nav-item">Contact</router-link>
-			<div class="header__social">
+			<div class="header__social" @click="openURL('https://www.facebook.com/modelagedelaterre')">
 				<v-icon name="instagram" base-class="instagram-icon"></v-icon>
 				<v-icon name="facebook" base-class="facebook-icon"></v-icon>
 			</div>
@@ -18,7 +18,13 @@
 
 <script>
 export default {
-	name: 'Header',
+  name: 'Header',
+  methods: {
+    openURL(url) {
+      console.log('hello')
+      window.open(url, '_blank');
+    }
+  }
 }
 </script>
 
@@ -58,6 +64,7 @@ export default {
 }
 
 .header__social {
+  cursor: pointer;
 	display: flex;
 	width: 120px;
 	flex-direction: row;

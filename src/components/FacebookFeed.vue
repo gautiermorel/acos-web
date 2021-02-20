@@ -1,18 +1,20 @@
 <template>
 	<section>
 		<v-photoswipe :isOpen="isOpen" :items="items" :options="optionsPS" @close="hidePhotoSwipe"></v-photoswipe>
-		<vue-masonry-wall :items="items" :options="options" @append="append">
-			<template v-slot:default="{ item }">
-				<div class="Item">
-					<img :src="item.src" @click="showPhotoSwipe(item.src)" />
+		<div class="portfolio__wall">
+			<vue-masonry-wall v-if="items.length > 0" :items="items" :options="options" @append="append">
+				<template v-slot:default="{ item }">
+					<div class="Item">
+						<img :src="item.src" @click="showPhotoSwipe(item.src)" />
 
-					<div class="Content">
-						<h5 class="text-ellipsis-1l">{{ item.title }}</h5>
-						<p class="text-ellipsis-2l">{{ item.content }}</p>
+						<div class="Content">
+							<h5 class="text-ellipsis-1l">{{ item.title }}</h5>
+							<p class="text-ellipsis-2l">{{ item.content }}</p>
+						</div>
 					</div>
-				</div>
-			</template>
-		</vue-masonry-wall>
+				</template>
+			</vue-masonry-wall>
+		</div>
 	</section>
 </template>
 
@@ -74,12 +76,10 @@ export default {
 		getUserFeed() {
 			this.loading = true
 			axios
-				.get('https://graph.facebook.com/133570825215171', {
+				.get('https://graph.facebook.com/1856037624719871', {
 					params: { access_token: this.token, fields: this.fields }
 				})
 				.then((response) => {
-					console.log('FACEBOOK RESPONSE=', response);
-
 					let { data: albums = [] } = (response && response.data && response.data.albums) || {};
 
 					for (let i = 0; i < albums.length; i++) {
@@ -95,10 +95,9 @@ export default {
 								src: source,
 								w: width,
 								h: height,
-								content: name,
-								title: description
-              })
-              
+								content: name || '',
+								title: description || '',
+							})
 						}
 					}
 				})
@@ -132,5 +131,8 @@ img {
 	height: 100%;
 	line-height: 0;
 	display: block;
+}
+.portfolio__wall {
+  padding: 30px;
 }
 </style>
